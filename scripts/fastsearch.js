@@ -1,6 +1,6 @@
 const params = {
     fuseOpts: {},
-    cx: 'f388e696a33d54890'
+    cx: '73c52d267da164910'
 };
 
 import Fuse from 'fuse.js';
@@ -69,7 +69,7 @@ export function search() {
         let query = "https://customsearch.googleapis.com/customsearch/v1?";
         query += "cx=" + params.cx;
         query += "&q=" + sInput.value;
-        query += "&key=AIzaSyC6y55s4OqQkyT4tp_ePjKShK7s3hRWGKc";
+        query += "&key=AIzaSyAZwwjv2dqjUm3kZtaonbS-ECuOi0F4G10";
         let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function (event) {
             if (xhr.readyState === 4) {
