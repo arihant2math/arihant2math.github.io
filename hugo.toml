@@ -1,3 +1,14 @@
 baseURL = 'https://arihant2math.github.io'
 languageCode = 'en-us'
-title = 'Website of Ashwin Naren'
+title = "Ashwin's Website"
+enableRobotsTXT = true
+theme = 'custom'
+
+[menus]
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 1
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

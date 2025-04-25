@@ -3,7 +3,11 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body class="antialiased text-text-primary-light dark:text-text-primary-dark bg-background-0-light dark:bg-background-0-dark text-lg leading-normal scroll-smooth
+{{- if eq site.Params.defaultTheme `dark` -}}
+{{- print " dark" }}
+{{- end -}}
+" id="top">
   <header>
     {{ partial "header.html" . }}
   </header>
