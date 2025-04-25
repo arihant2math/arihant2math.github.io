@@ -1,21 +1,24 @@
+{{- if lt hugo.Version "0.120.0" }}
+{{- errorf "=> hugo v0.120.0 or greater is required for this site to build " }}
+{{- end -}}
+
 <!DOCTYPE html>
 <html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
+  {{ block "head" . }}
+  {{ end }}
 </head>
 <body class="antialiased text-text-primary-light dark:text-text-primary-dark bg-background-0-light dark:bg-background-0-dark text-lg leading-normal scroll-smooth
 {{- if eq site.Params.defaultTheme `dark` -}}
 {{- print " dark" }}
 {{- end -}}
 " id="top">
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
+  {{- partial "header.html" . .Page -}}
+  {{- block "body" . }}{{ end }}
+  <main id="main" class="main" style="margin-top: 60px">
     {{ block "main" . }}{{ end }}
   </main>
-  <footer>
-    {{ partial "footer.html" . }}
-  </footer>
+  {{ partial "footer.html" . }}
 </body>
 </html>

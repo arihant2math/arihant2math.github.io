@@ -1,0 +1,1 @@
+(()=>{"use strict";function n(n,t){return{handler:n,config:t}}n.withOptions=function(n,t=()=>({})){function i(i){return{handler:n(i),config:t(i)}}return i.__isOptionsFunction=!0,i},n((({addVariant:n})=>{n("intersect","&:not([no-intersect])")})).start()})();

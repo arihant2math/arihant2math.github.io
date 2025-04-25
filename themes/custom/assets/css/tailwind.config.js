@@ -19,12 +19,12 @@ module.exports = {
             },
             colors: {
                 'accent-primary': {
-                    light: colors.red["600"],
-                    dark: colors.red["500"],
+                    light: colors.blue["600"],
+                    dark: colors.blue["500"],
                 },
                 'accent-secondary': {
-                    light: colors.red["700"],
-                    dark: colors.red["600"],
+                    light: colors.blue["700"],
+                    dark: colors.blue["600"],
                 },
                 'text-primary': {
                     light: colors.gray["900"],

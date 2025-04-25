@@ -1,0 +1,316 @@
+@layer components {
+    h1 > a > svg {
+        @apply inline
+    }
+
+    img.in-text {
+        @apply inline m-auto
+    }
+
+    .breadcrumbs a {
+        @apply text-base
+    }
+
+    .page-header,
+    .post-header {
+        @apply mt-6 mr-auto ml-auto mb-5
+    }
+
+    .post-title {
+        @apply mb-0.5 text-5xl
+    }
+
+    .post-description {
+        @apply mt-2.5 mb-1
+    }
+
+    .post-meta .i18n_list li {
+        @apply inline-flex list-none mt-auto mb-auto mr-1 ml-1
+    }
+
+    .post-content h1 {
+        @apply ml-0 mr-0 mt-10 mb-8
+    }
+
+    .post-content h2 {
+        @apply ml-0 mr-0 mt-8 mb-6
+    }
+
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+        @apply ml-0 mr-0 mt-6 mb-4
+    }
+
+    .post-content h1 {
+        @apply text-4xl
+    }
+
+    .post-content h2 {
+        @apply text-2xl
+    }
+
+    .post-content h3 {
+        @apply text-xl
+    }
+
+    .post-content h4 {
+        @apply text-lg
+    }
+
+    .post-content h5 {
+        @apply text-base
+    }
+
+    .post-content h6 {
+        @apply text-sm
+    }
+
+    .post-content a code {
+        @apply mt-auto mb-auto ml-0 mr-0 rounded-none
+    }
+
+    .post-content del {
+        @apply line-through
+    }
+
+    .post-content dl,
+    .post-content ol,
+    .post-content p,
+    .post-content figure,
+    .post-content ul {
+        @apply mb-5;
+    }
+
+    .post-content ol,
+    .post-content ul {
+        @apply ps-5 list-disc
+    }
+
+    .post-content li {
+        @apply mt-1
+    }
+
+    .post-content li p {
+        @apply mb-0
+    }
+
+    .post-content dl {
+        @apply flex flex-wrap m-0
+    }
+
+    .post-content dt {
+        @apply w-3/12 font-bold
+    }
+
+    .post-content dd {
+        @apply w-9/12 ms-0 ps-2.5
+    }
+
+    .post-content dd ~ dd,
+    .post-content dt ~ dt {
+        @apply mt-2.5
+    }
+
+    .post-content table {
+        @apply mb-5
+    }
+
+    .post-content table th,
+    .post-content table:not(.highlighttable, .highlight table, .gist .highlight) td {
+        @apply min-w-20 pt-2 pb-2 pl-1 pr-1 leading-normal border-b border-solid border-border-01-light dark:border-border-01-dark
+    }
+
+    .post-content table th {
+        @apply text-start
+    }
+
+    .post-content table:not(.highlighttable) td code:only-child {
+        @apply mt-auto mb-auto ml-0 mr-0
+    }
+
+    .post-content .highlight table {
+        @apply rounded-lg
+    }
+
+    .post-content .highlight:not(tab--entryle) {
+        @apply mt-2.5 mb-2.5 ml-auto mr-auto rounded-lg bg-gray-800
+    }
+
+    .post-content li > .highlight {
+        @apply me-0
+    }
+
+    // TODO: Fix
+    //.post-content ul pre {
+    //    @apply ms-10
+    //}
+
+    .post-content .highlight pre {
+        @apply m-0
+    }
+
+    .post-content .highlighttable {
+        @apply table-fixed
+    }
+
+    .post-content .highlighttable td:first-child {
+        @apply w-10
+    }
+
+    // margin-inline-start: calc(var(--gap) * -2);
+    .post-content .highlighttable td .linenodiv {
+        @apply pe-0
+    }
+
+    .post-content .highlighttable td .highlight,
+    .post-content .highlighttable td .linenodiv pre {
+        @apply mb-0
+    }
+
+    .post-content code {
+        @apply m-auto pt-1 pb-1 pl-1 pr-1 text-sm leading-5 rounded-sm
+    }
+
+    .post-content pre {
+        @apply rounded-lg
+    }
+
+    .post-content pre code {
+        // TODO: not code-bg
+        @apply grid m-auto pt-2 pb-2 pl-5 pr-5 text-gray-100 bg-gray-900 rounded-lg overflow-x-auto break-all
+    }
+
+    .post-content blockquote {
+        @apply mt-5 mb-5 ml-0 mr-0 pt-0 pb-0 pl-3 pr-3 border-2 border-solid border-gray-800 dark:border-gray-200
+    }
+
+    .post-content hr {
+        @apply mt-7 mb-7 h-0.5 bg-gray-300 dark:bg-gray-600 border-0
+    }
+
+    .post-content iframe {
+        @apply w-full
+    }
+
+    .post-content img {
+        @apply rounded mt-4 mb-4 ml-0 mr-0
+    }
+    .post-content img[src*="#center"] {
+        @apply rounded mt-4 mb-4 ml-auto mr-auto
+    }
+
+    .post-content figure.align-center {
+        @apply text-center
+    }
+
+    .post-content figure > figcaption {
+        @apply text-black dark:text-white text-base font-bold mt-2 mb-4
+    }
+
+    .post-content figure > figcaption > p {
+        @apply text-gray-500 dark:text-gray-400 text-sm font-normal
+    }
+
+    .toc {
+        // TODO: not code-bg
+        @apply mt-0 mr-0.5 mb-10 ml-0.5 border-2 border-solid border-gray-800 dark:border-gray-200 rounded-lg bg-gray-900 p-2
+    }
+
+    .toc details summary {
+        @apply cursor-zoom-in ms-5
+    }
+
+    .toc details[open] summary {
+        @apply cursor-zoom-out
+    }
+
+    .toc .details {
+        @apply inline font-semibold
+    }
+
+    .toc .inner {
+        @apply mt-0 mb-0 ml-5 mr-5 pt-2.5 pb-2.5 pl-5 pr-5
+    }
+
+    .toc li ul {
+        @apply ms-6
+    }
+
+    .toc summary:focus {
+        @apply outline-none
+    }
+
+    .post-footer {
+        @apply mt-14
+    }
+
+    .post-footer > * {
+        @apply mb-2.5
+    }
+
+    .post-tags a,
+    .share-buttons,
+    .paginav {
+        // TODO: not code-bg
+        @apply rounded-lg bg-gray-900 border border-solid border-gray-800 dark:border-gray-200
+    }
+
+    .post-tags a {
+        // TODO: not code-bg
+        @apply block pt-0 pb-0 pl-3.5 pr-3.5 text-gray-500 dark:text-gray-400 text-sm bg-gray-900
+    }
+
+    .post-tags a:hover,
+    .paginav a:hover {
+        @apply bg-gray-800 dark:bg-gray-200
+    }
+
+    .share-buttons {
+        @apply p-2 flex justify-center overflow-x-auto gap-6
+    }
+
+    .share-buttons li,
+    .share-buttons a {
+        @apply inline-flex
+    }
+
+    .share-buttons a:not(:last-of-type) {
+        @apply me-3
+    }
+
+    h1:hover .anchor,
+    h2:hover .anchor,
+    h3:hover .anchor,
+    h4:hover .anchor,
+    h5:hover .anchor,
+    h6:hover .anchor {
+        @apply inline-flex text-text-secondary-light dark:text-text-secondary-dark font-medium ms-2 select-none
+    }
+
+    .paginav {
+        @apply flex leading-8
+    }
+
+    .paginav a {
+        @apply ps-3.5 pe-3.5 rounded-lg
+    }
+
+    .paginav .title {
+        @apply uppercase text-sm text-text-secondary-light dark:text-text-secondary-dark
+    }
+
+    .paginav .prev,
+    .paginav .next {
+        @apply w-1/2
+    }
+
+    .paginav span:hover:not(.title) {
+        @apply shadow-md
+    }
+
+    .paginav .next {
+        @apply ms-auto text-right rtl:text-left
+    }
+}

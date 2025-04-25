@@ -1,0 +1,23 @@
+$gap: 24px;
+$main-width: 720px;
+$header-height: 65px;
+$footer-height: 20px;
+
+.main {
+    position: relative;
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+    max-width: calc(#{$main-width} + #{$gap} * 2);
+    margin: auto;
+    padding: #{$gap};
+}
+
+.page-header h1 {
+    font-size: 40px;
+}
+
+@layer components {
+    div.highlight,
+    pre {
+        @apply relative
+    }
+}

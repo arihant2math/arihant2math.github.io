@@ -1,1 +1,46 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{- if not (.Param "hideFooter") }}
+<footer class="footer m-auto text-sm text-center content-center pt-5 pb-5 text-text-secondary-light dark:text-text-secondary-dark">
+    {{- if not site.Params.footer.hideCopyright }}
+        {{- if site.Copyright }}
+        <span>{{ site.Copyright | markdownify }}</span>
+        {{- else }}
+        <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
+        {{- end }}
+        {{- print " · "}}
+    {{- end }}
+
+    <!-- {{- with site.Params.footer.text }}
+        {{ . | markdownify }}
+        {{- print " · "}}
+    {{- end }} -->
+
+    <!-- <span>
+        Contact <a href="malito:webmaster@pixelators.org">webmaster@pixelators.org</a> for website related issues or inquires.
+    </span> -->
+    {{/*{{- template "partials/social_text.html" . }} */}}
+</footer>
+{{- end }}
+
+{{/*{{- if (not site.Params.disableScrollToTop) }} */}}
+{{/*{{- partial "toplink.html" . }} */}}
+{{/*{{- end }} */}}
+
+{{- partial "extend_footer.html" . }}
+
+<!-- {{- $main_js := resources.Get "js/main.js" }}
+{{- if not site.Params.assets.disableFingerprinting }}
+{{ $main_js = $main_js | resources.Fingerprint "sha512" }}
+<script defer crossorigin="anonymous" src="{{ $main_js.RelPermalink }}" integrity="{{ $main_js.Data.Integrity }}"></script>
+{{- else }}
+<script defer crossorigin="anonymous" src="{{ $main_js.RelPermalink }}"></script>
+{{- end }} -->
+
+{{- if (not site.Params.disableThemeToggle) }}
+    {{- $theme_toggle_js := resources.Get "js/theme.js" }}
+    {{- if not site.Params.assets.disableFingerprinting }}
+        {{ $theme_toggle_js = $theme_toggle_js | resources.Fingerprint "sha512" }}
+        <script defer crossorigin="anonymous" src="{{ $theme_toggle_js.RelPermalink }}" integrity="{{ $theme_toggle_js.Data.Integrity }}"></script>
+    {{- else }}
+        <script defer crossorigin="anonymous" src="{{ $theme_toggle_js.RelPermalink }}"></script>
+    {{- end }}
+{{- end }}

@@ -1,0 +1,49 @@
+@layer base {
+    @font-face {
+      font-family: 'Inter', sans-serif;
+      // TODO: download
+      src: local('Inter'), url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap") format('truetype');
+    }
+  
+    *,
+    ::after,
+    ::before {
+      @apply box-border
+    }
+  
+    body {
+      @apply break-words
+    }
+  
+    article,
+    aside,
+    figcaption,
+    figure,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    table {
+      @apply block
+    }
+  
+    // Link stuff
+    main a {
+      @apply text-accent-secondary-light dark:text-accent-secondary-dark no-underline
+    }
+  
+    main a:hover {
+      @apply text-accent-primary-light dark:text-accent-primary-dark
+    }
+  
+    img {
+      @apply block
+    }
+  
+    button,
+    input[type=button],
+    input[type=submit] {
+      @apply cursor-pointer
+    }
+  }
