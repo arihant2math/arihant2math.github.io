@@ -21,8 +21,8 @@ pageRef = '/music'
 weight = 3
 
 [[menus.main]]
-name = 'Research'
-pageRef = '/research'
+name = 'Publications'
+pageRef = '/publications'
 weight = 4
 
 [[menus.main]]

@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "Publications"
 ---
 ## Isoperimetric sets of English words
 
