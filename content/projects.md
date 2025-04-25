@@ -2,7 +2,7 @@
 title: "Projects"
 ---
 # Traffic Detection from CCTV footage
-**Description**: Train YOLOv8 to optimally detect cars via pre-installed CCTV on highways to calculate traffic flow in various areas.
+Train YOLOv8 to optimally detect cars via pre-installed CCTV on highways to calculate traffic flow in various areas.
 
 - [Final Report](https://raw.githubusercontent.com/arihant2math/msb_final_project/master/MSB%20Final%20Report.pdf)
 - [Repository](https://github.com/arihant2math/msb_final_project)

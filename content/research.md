@@ -10,7 +10,7 @@ using the metric distances betwen them as a numerical measure of distance on the
 
 https://www.parabola.unsw.edu.au/sites/default/files/2024-02/vol59_no2_1.pdf
 
-## Homomorphism Densitry
+## Homomorphism Density
 
 *Ashwin Naren*
 
