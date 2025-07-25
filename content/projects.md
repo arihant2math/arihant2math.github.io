@@ -14,6 +14,9 @@ A few other organizations have projects that I created/maintain:
 
 ## libffi-rs
 
+![Crates.io Total Downloads](https://img.shields.io/crates/d/libffi)
+
+
 I maintain libffi-rs: bindings for the libffi C library.
 The library provides a (mostly) safe interface for making dynamic user-defined ffi calls at runtime with minimal overhead. It currently has over 1 million downloads.
 
