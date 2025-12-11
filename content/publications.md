@@ -1,6 +1,12 @@
 ---
 title: "Publications"
 ---
+## AI-Driven Research Systems (ADRS)
+
+In-progress. Explores AI-driven optimization of problems via evolutionary learning.
+
+https://sky.cs.berkeley.edu/project/adrs/
+
 ## Isoperimetric sets of English words
 
 *Grant Blitz, Timothy Chen, Marcus Collins, Ashwin Naren, Edward Zhang, et. al.*
