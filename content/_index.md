@@ -1,7 +1,1 @@
-Hello, my name is Ashwin Naren.
-
-## Interests
-- Computational Mathematics
-- Rust
-- Graph Theory
-- Classical Guitar
+Hello, my name is Ashwin Naren. As of 2025 I'm a junior in highschool. I enjoy doing research on Machine Learning reliability and theoretical computer science. In my free time I swim and play classical guitar.
