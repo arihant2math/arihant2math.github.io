@@ -3,7 +3,7 @@ title: "Publications"
 ---
 ## Let the Barbarians In: How AI Can Accelerate Systems Performance Research 
 
-
+*Audrey Cheng, Shu Liu, Melissa Pan, Zhifei Li, Shubham Agarwal, Mert Cemri, Bowen Wang, Alexander Krentsel, Tian Xia, Jongseok Park, Shuo Yang, Jeff Chen, Lakshya Agrawal, Ashwin Naren, Shulu Li, Ruiying Ma, Aditya Desai, Jiarong Xing, Koushik Sen, Matei Zaharia, Ion Stoica*
 
 Explores AI-driven optimization of problems via evolutionary learning.
 
