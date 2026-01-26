@@ -41,7 +41,7 @@ A custom frontend (desktop app) written in Rust and Tauri for https://pronto.io.
 
 # Research
 
-More research can be found in the publications page.
+Research in pre-print or publication can be found in the [publications page](/publications).
 
 ## Traffic Detection from CCTV footage
 Trained YOLOv8 to optimally detect cars via pre-installed CCTV on highways to calculate traffic flow in various areas.
