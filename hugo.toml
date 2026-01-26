@@ -15,10 +15,10 @@ name = 'Projects'
 pageRef = '/projects'
 weight = 2
 
-[[menus.main]]
-name = 'Music'
-pageRef = '/music'
-weight = 3
+# [[menus.main]]
+# name = 'Music'
+# pageRef = '/music'
+# weight = 3
 
 [[menus.main]]
 name = 'Publications'
