@@ -35,7 +35,7 @@ I developed a sub-millisecond latency communication system to fuse the April Tag
 - [Repo](https://github.com/Pixelators4014/pixelization_rs)
 
 ## Prontus
-A custom frontend (desktop app) written in Rust and Tauri for https://pronto.io.
+A custom frontend (desktop app) written in Rust and Tauri for https://pronto.io. It involved reverse-engineering pronto's http and websocket API.
 
 - [Repo](https://github.com/arihant2math/prontus/)
 
