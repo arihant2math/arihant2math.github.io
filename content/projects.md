@@ -20,7 +20,7 @@ A few other organizations have projects that I created/maintain:
 I maintain libffi-rs: bindings for the libffi C library.
 The library provides a (mostly) safe interface for making dynamic user-defined ffi calls at runtime with minimal overhead. It currently is used by [MIRI](https://github.com/rust-lang/miri), [deno](https://deno.com/), and [RustPython](https://rustpython.github.io/), among other projects.
 
-- [Repository](https://github.com/libffi-rs/libffi-rs)
+- [Repo](https://github.com/libffi-rs/libffi-rs)
 
 
 ## VSLAM in FRC
@@ -32,12 +32,12 @@ The VSLAM computations were running in conjunction with April Tag detection on a
 I developed a sub-millisecond latency communication system to fuse the April Tag and the VSLAM localization data before sending it to the main processor to be used.
 
 - [Blog Post](https://pixelators.org/blog/2024_05_25_orin_coprocessor/)
-- [Repository](https://github.com/Pixelators4014/pixelization_rs)
+- [Repo](https://github.com/Pixelators4014/pixelization_rs)
 
 ## Prontus
 A custom frontend (desktop app) written in Rust and Tauri for https://pronto.io.
 
-- [Repository](https://github.com/arihant2math/prontus/)
+- [Repo](https://github.com/arihant2math/prontus/)
 
 # Research
 
@@ -47,4 +47,4 @@ Research in pre-print or publication can be found in the [publications page](/pu
 Trained YOLOv8 to optimally detect cars via pre-installed CCTV on highways to calculate traffic flow in various areas.
 
 - [Final Report](https://raw.githubusercontent.com/arihant2math/msb_final_project/master/MSB%20Final%20Report.pdf)
-- [Repository](https://github.com/arihant2math/msb_final_project)
+- [Repo](https://github.com/arihant2math/msb_final_project)
