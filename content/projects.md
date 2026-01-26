@@ -18,7 +18,7 @@ A few other organizations have projects that I created/maintain:
 
 
 I maintain libffi-rs: bindings for the libffi C library.
-The library provides a (mostly) safe interface for making dynamic user-defined ffi calls at runtime with minimal overhead. It currently is used by [MIRI](https://github.com/rust-lang/miri), [deno](https://deno.com/), and [RustPython](https://rustpython.github.io/), among other projects.
+The library provides a (mostly) safe interface for making dynamic user-defined ffi calls at runtime with minimal overhead. It currently is used by [Miri](https://github.com/rust-lang/miri), [deno](https://deno.com/), and [RustPython](https://rustpython.github.io/), among other projects.
 
 - [Repo](https://github.com/libffi-rs/libffi-rs)
 
