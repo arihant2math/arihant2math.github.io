@@ -1,6 +1,27 @@
 ---
 title: "Publications"
 ---
+
+## EvoX: Meta-Evolution for Automated Discovery
+
+*Shu Liu\*, Shubham Agarwal\*, Monishwaran Maheswaran, Mert Cemri, Zhifei Li, Qiuyang Mang, Ashwin Naren, Ethan Boneh, Audrey Cheng, Melissa Pan, Alexander Du, Kurt Keutzer, Alexandros Dimakis, Koushik Sen, Matei Zaharia, Ion Stoica*
+
+Preprint: https://arxiv.org/abs/2602.23413
+
+Project Page: https://skydiscover-ai.github.io/
+
+Repo: https://github.com/skydiscover-ai/skydiscover
+
+## AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization
+
+*Mert Cemri\*, Shubham Agrawal\*, Akshat Gupta, Shu Liu, Audrey Cheng, Qiuyang Mang, Ashwin Naren, Lutfi Eren Erdogan, Koushik Sen, Matei Zaharia, Alex Dimakis, Ion Stoica*
+
+Preprint: https://arxiv.org/abs/2602.20133
+
+Project Page: https://skydiscover-ai.github.io/
+
+Repo: https://github.com/skydiscover-ai/skydiscover
+
 ## Let the Barbarians In: How AI Can Accelerate Systems Performance Research 
 
 *Audrey Cheng, Shu Liu, Melissa Pan, Zhifei Li, Shubham Agarwal, Mert Cemri, Bowen Wang, Alexander Krentsel, Tian Xia, Jongseok Park, Shuo Yang, Jeff Chen, Lakshya Agrawal, Ashwin Naren, Shulu Li, Ruiying Ma, Aditya Desai, Jiarong Xing, Koushik Sen, Matei Zaharia, Ion Stoica*
