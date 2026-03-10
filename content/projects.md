@@ -24,10 +24,10 @@ The library provides a (mostly) safe interface for making dynamic user-defined f
 
 
 ## VSLAM in FRC
-Integration of VSLAM on a FRC robot for enhanced localization ablities.
+Integration of VSLAM on a FRC robot for enhanced localization abilities.
 VSLAM (Visual SLAM) is a technology that uses points of contrast in an enviorment to track the position of the camera within the enviorment.
 The technology for this was provided by NVIDIA and an Intel Realsense camera was used for stereo camera input.
-The VSLAM computations were running in conjunction with April Tag detection on an Orin Nano runnin ROS 2 (Robot Operating System 2).
+The VSLAM computations were running in conjunction with April Tag detection on an Orin Nano running ROS 2 (Robot Operating System 2).
 
 I developed a sub-millisecond latency communication system to fuse the April Tag and the VSLAM localization data before sending it to the main processor to be used.
 
