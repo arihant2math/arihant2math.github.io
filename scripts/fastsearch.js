@@ -58,6 +58,7 @@ window.onload = function () {
 }
 
 // TODO: search suggestions
+// TODO: Progress bar while searching
 
 export function search() {
     console.log('Searching...');
@@ -77,6 +78,9 @@ export function search() {
                     let data = JSON.parse(xhr.responseText);
                     resList.innerHTML = '';
                     let res;
+                    if (!data.items) {
+                        resList.innerHTML = `<div class="p-4 text-center text-text-primary-light dark:text-text-primary-dark">No results found.</div>`;
+                    }
                     for (res of data.items) {
                         console.log(res);
                         let resItem = document.createElement('a');
