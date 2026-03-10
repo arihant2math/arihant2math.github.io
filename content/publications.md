@@ -43,7 +43,7 @@ http://simonrs.com/eulercircle/irpw2024/ashwin-homdensity-paper.pdf
 
 ## Isoperimetric sets of English words
 
-*Grant Blitz, Timothy Chen, Marcus Collins, Ashwin Naren, Edward Zhang, et. al.*
+*Grant Blitz, Timothy Chen, Marcus Collins, Ashwin Naren, Edward Zhang, et al.*
 
 On Isoperimetric sets of english words,
 using the metric distances between them as a numerical measure of distance on the 3000 most used English words.
