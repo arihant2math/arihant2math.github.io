@@ -133,7 +133,7 @@ function resizeCanvas(state) {
   state.canvas.style.width = `${state.width}px`;
   state.canvas.style.height = `${state.height}px`;
   state.ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
-  state.maxAgents = Math.min(340, Math.max(130, Math.floor((state.width * state.height) / 6200)));
+  state.maxAgents = Math.min(500, Math.max(150, Math.floor((state.width * state.height) / 6200)));
 
   while (state.agents.length < Math.min(state.maxAgents, Math.floor(state.maxAgents * 0.62))) {
     state.agents.push(createAgent(state));
@@ -440,7 +440,7 @@ function initAgents() {
     width: window.innerWidth,
     height: window.innerHeight,
     dpr: 1,
-    maxAgents: 180,
+    maxAgents: 200,
     agents: [],
     pointer: {
       x: window.innerWidth * 0.74,
