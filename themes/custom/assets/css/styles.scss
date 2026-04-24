@@ -25,3 +25,29 @@ html[data-turbo-visit-direction="forward"]::view-transition-old(sidebar):only-ch
     }
 }
 
+.home-trinket-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.2), transparent 45%),
+        linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, rgba(241, 245, 249, 0.85) 100%);
+}
+
+.dark .home-trinket-bg {
+    background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.12), transparent 40%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.92) 0%, rgba(2, 6, 23, 0.92) 100%);
+}
+
+#home-mountains-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.home-trinket-content,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+

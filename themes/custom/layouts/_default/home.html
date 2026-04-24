@@ -1,6 +1,10 @@
 {{- define "main" }}
 
-<article class="post-single">
+<div class="home-trinket-bg" aria-hidden="true">
+  <canvas id="home-mountains-canvas"></canvas>
+</div>
+
+<article class="post-single home-trinket-content">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">
@@ -61,5 +65,7 @@
   {{- partial "comments.html" . }}
   {{- end }} -->
 </article>
+
+<script type="module" src="{{ "js/home-mountains.js" | relURL }}"></script>
 
 {{- end }}{{/* end main */}}
