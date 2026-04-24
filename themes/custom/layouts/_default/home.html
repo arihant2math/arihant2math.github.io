@@ -1,6 +1,8 @@
 {{- define "main" }}
 
-<article class="post-single">
+<div id="home-mountain-trinket" aria-hidden="true"></div>
+
+<article class="post-single home-mountain-content">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">
@@ -61,5 +63,15 @@
   {{- partial "comments.html" . }}
   {{- end }} -->
 </article>
+
+{{- with resources.Get "js/mountain-trinket.js" }}
+  {{- if eq hugo.Environment "development" }}
+    <script type="module" src="{{ .RelPermalink }}"></script>
+  {{- else }}
+    {{- with . | fingerprint }}
+      <script type="module" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
 
 {{- end }}{{/* end main */}}
