@@ -92,7 +92,7 @@ function spawnBurst(state, x, y, count = 12) {
 
 }
 
-function despawnNear(state, x, y, radius = 86, count = 9) {
+function despawnNear(state, x, y, radius = 20, count = 9) {
   const candidates = state.agents
     .map((agent, index) => ({
       index,
@@ -157,7 +157,7 @@ function updateAgents(state, dt, now) {
   }
 
   if (pointer.downRight && now - state.lastEraseAt > 66) {
-    despawnNear(state, pointer.x, pointer.y, 68, 4);
+    despawnNear(state, pointer.x, pointer.y, 20, 4);
     state.lastEraseAt = now;
   }
 
@@ -470,7 +470,7 @@ function initAgents() {
     if (event.button === 2 || (event.button === 0 && event.ctrlKey)) {
       event.preventDefault();
       state.pointer.downRight = true;
-      despawnNear(state, state.pointer.x, state.pointer.y, 96, 14);
+      despawnNear(state, state.pointer.x, state.pointer.y, 20, 14);
       state.lastEraseAt = performance.now();
       return;
     }
