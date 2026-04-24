@@ -3,7 +3,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.m
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const mountainPalettes = {
   light: {
-    terrain: 0x9bd7f0,
+    terrain: 0x68bbde,
     terrainOpacity: 0.74,
     wire: 0x38bdf8,
     wireOpacity: 0.32,

@@ -15,7 +15,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
-                logo: ['Monocraft']
+                logo: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', '"Cascadia Mono"', '"Roboto Mono"', '"Liberation Mono"', 'Menlo', 'Monaco', 'Consolas', 'monospace']
             },
             colors: {
                 'accent-primary': {
