@@ -43,3 +43,8 @@ url = "https://github.com/arihant2math/"
 [[params.socialIcons]]
 name = "google scholar"
 url = "https://scholar.google.com/citations?user=gX5KMhQAAAAJ&hl=en"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
