@@ -61,8 +61,6 @@ html[data-turbo-visit-direction="forward"]::view-transition-old(sidebar):only-ch
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(240, 249, 255, 0.58));
     box-shadow: 0 24px 70px rgba(14, 116, 144, 0.16),
         inset 0 1px 0 rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(22px) saturate(1.18);
-    -webkit-backdrop-filter: blur(22px) saturate(1.18);
 }
 
 .dark .home-trinket-content {
