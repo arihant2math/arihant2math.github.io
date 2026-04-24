@@ -1,54 +1,68 @@
-if (document.getElementById('menu')) {
-    document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
-    document.getElementById('menu').onscroll = function () {
-        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
-    }
+function initMenuScrollMemory() {
+    const menu = document.getElementById('menu');
+    if (!menu || menu.dataset.scrollMemoryBound === 'true') return;
+
+    menu.dataset.scrollMemoryBound = 'true';
+    menu.scrollLeft = localStorage.getItem('menu-scroll-position') || 0;
+    menu.addEventListener('scroll', () => {
+        localStorage.setItem('menu-scroll-position', menu.scrollLeft);
+    });
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        var id = this.getAttribute("href").substr(1);
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                behavior: "smooth"
-            });
-        } else {
-            document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-        }
-        if (id === "top") {
-            history.replaceState(null, null, " ");
-        } else {
-            history.pushState(null, null, `#${id}`);
-        }
-    });
-});
+function initSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]:not([data-smooth-scroll-bound])').forEach(anchor => {
+        anchor.dataset.smoothScrollBound = 'true';
+        anchor.addEventListener('click', function (e) {
+            const id = this.getAttribute('href').substr(1);
+            const target = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            if (!target) return;
 
-window.addEventListener("scroll", function(evt) {
-    let navDiv = document.getElementById('nav-div');
-    let topClasses = ["bg-background-0-light", "dark:bg-background-0-dark"];
-    let scrollClasses = ["bg-background-0-light/10", "dark:bg-slate-background-0-dark/10", "border-b"]
-    if (window.scrollY < 150) {
-        for (let i = 0; i < topClasses.length; i++) {
-            if (!navDiv.classList.contains(topClasses[i])) {
-                navDiv.classList.add(topClasses[i]);
+            e.preventDefault();
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                target.scrollIntoView();
             }
-        }
-        for (let i = 0; i < scrollClasses.length; i++) {
-            if (navDiv.classList.contains(scrollClasses[i])) {
-                navDiv.classList.remove(scrollClasses[i]);
+            if (id === 'top') {
+                history.replaceState(null, null, ' ');
+            } else {
+                history.pushState(null, null, `#${id}`);
             }
+        });
+    });
+}
+
+let navScrollBound = false;
+function initNavScrollChrome() {
+    if (navScrollBound) return;
+    navScrollBound = true;
+
+    window.addEventListener('scroll', function () {
+        const navDiv = document.getElementById('nav-div');
+        if (!navDiv) return;
+
+        const topClasses = ['bg-background-0-light', 'dark:bg-background-0-dark'];
+        const scrollClasses = ['bg-background-0-light/10', 'dark:bg-slate-background-0-dark/10', 'border-b'];
+        if (window.scrollY < 150) {
+            topClasses.forEach(className => navDiv.classList.add(className));
+            scrollClasses.forEach(className => navDiv.classList.remove(className));
+        } else {
+            topClasses.forEach(className => navDiv.classList.remove(className));
+            scrollClasses.forEach(className => navDiv.classList.add(className));
         }
-    } else {
-        for (let i = 0; i < topClasses.length; i++) {
-            if (navDiv.classList.contains(topClasses[i])) {
-                navDiv.classList.remove(topClasses[i]);
-            }
-        }
-        for (let i = 0; i < scrollClasses.length; i++) {
-            if (!navDiv.classList.contains(scrollClasses[i])) {
-                navDiv.classList.add(scrollClasses[i]);
-            }
-        }
-    }
-});
+    }, { passive: true });
+}
+
+function initSiteEnhancements() {
+    initMenuScrollMemory();
+    initSmoothAnchors();
+    initNavScrollChrome();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSiteEnhancements);
+} else {
+    initSiteEnhancements();
+}
+
+document.addEventListener('turbo:load', initSiteEnhancements);

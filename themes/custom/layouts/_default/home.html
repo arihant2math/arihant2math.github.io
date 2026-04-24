@@ -1,8 +1,29 @@
+{{- define "head" }}
+{{- with resources.Get "js/home-trinket.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- end }}
+
 {{- define "main" }}
 
-<article class="post-single">
+<article class="post-single home-proof-lab" data-three-home-trinket>
+  <div class="home-trinket-stage" aria-hidden="true">
+    <canvas class="home-trinket-canvas" data-home-trinket-canvas></canvas>
+    <div class="home-trinket-hint">Move your cursor to bend the proof-current · click to launch a tiny counterexample</div>
+  </div>
+  <div class="home-copy-panel" data-home-copy>
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
+    {{- if .Title }}
     <h1 class="post-title entry-hint-parent">
       {{ .Title }}
       {{- if .Draft }}
@@ -14,6 +35,7 @@
       </span>
       {{- end }}
     </h1>
+    {{- end }}
     {{- if .Description }}
     <div class="post-description">
       {{ .Description }}
@@ -56,6 +78,7 @@
     {{- partial "share_icons.html" . -}}
     {{- end }} -->
   </footer>
+  </div>
 
   <!-- {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}

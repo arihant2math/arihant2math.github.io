@@ -4,6 +4,7 @@ module.exports = {
     entry: {
         // Scripts
         'main': './scripts/main.js',
+        'home-trinket': './scripts/home-trinket.js',
         'fastsearch': './scripts/fastsearch.js',
         'intersect': './scripts/intersect.js',
         // 'sentry': './scripts/sentry.js',
