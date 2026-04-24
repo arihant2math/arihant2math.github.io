@@ -5,7 +5,7 @@ const mountainPalettes = {
   light: {
     terrain: 0x68bbde,
     terrainOpacity: 0.74,
-    wire: 0x38bdf8,
+    wire: 0x134054,
     wireOpacity: 0.32,
     fog: 0xe0f7ff,
     ambient: 0xffffff,
