@@ -1,10 +1,58 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js";
 
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const mountainPalettes = {
+  light: {
+    terrain: 0x9bd7f0,
+    terrainOpacity: 0.74,
+    wire: 0x38bdf8,
+    wireOpacity: 0.32,
+    fog: 0xe0f7ff,
+    ambient: 0xffffff,
+    ambientIntensity: 0.62,
+    key: 0xdff6ff,
+    keyIntensity: 1.45,
+    fill: 0x60a5fa,
+    fillIntensity: 0.5,
+  },
+  dark: {
+    terrain: 0x355f8a,
+    terrainOpacity: 0.85,
+    wire: 0x7dd3fc,
+    wireOpacity: 0.25,
+    fog: 0x0f172a,
+    ambient: 0xffffff,
+    ambientIntensity: 0.45,
+    key: 0xcce7ff,
+    keyIntensity: 1.2,
+    fill: 0x7dd3fc,
+    fillIntensity: 0.55,
+  },
+};
 let cleanup = null;
 
-function createMountains() {
-  const terrainGeometry = new THREE.PlaneGeometry(140, 90, 44, 26);
+function getMountainPalette() {
+  return document.body.classList.contains("dark") ? mountainPalettes.dark : mountainPalettes.light;
+}
+
+function applyMountainPalette({ scene, terrainMaterial, wireMaterial, ambient, keyLight, fillLight }) {
+  const palette = getMountainPalette();
+
+  scene.fog.color.setHex(palette.fog);
+  terrainMaterial.color.setHex(palette.terrain);
+  terrainMaterial.opacity = palette.terrainOpacity;
+  wireMaterial.color.setHex(palette.wire);
+  wireMaterial.opacity = palette.wireOpacity;
+  ambient.color.setHex(palette.ambient);
+  ambient.intensity = palette.ambientIntensity;
+  keyLight.color.setHex(palette.key);
+  keyLight.intensity = palette.keyIntensity;
+  fillLight.color.setHex(palette.fill);
+  fillLight.intensity = palette.fillIntensity;
+}
+
+function createMountains(palette) {
+  const terrainGeometry = new THREE.PlaneGeometry(280, 180, 44, 26);
   const vertices = terrainGeometry.attributes.position;
 
   for (let i = 0; i < vertices.count; i += 1) {
@@ -22,20 +70,20 @@ function createMountains() {
   terrainGeometry.translate(0, -7, -12);
 
   const terrainMaterial = new THREE.MeshStandardMaterial({
-    color: 0x355f8a,
+    color: palette.terrain,
     flatShading: true,
     roughness: 0.92,
     metalness: 0.05,
     transparent: true,
-    opacity: 0.85,
+    opacity: palette.terrainOpacity,
   });
 
   const wireGeometry = terrainGeometry.clone();
   const wireMaterial = new THREE.MeshBasicMaterial({
-    color: 0x7dd3fc,
+    color: palette.wire,
     wireframe: true,
     transparent: true,
-    opacity: 0.25,
+    opacity: palette.wireOpacity,
   });
 
   const terrain = new THREE.Mesh(terrainGeometry, terrainMaterial);
@@ -65,26 +113,27 @@ function initMountains() {
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.setClearColor(0x000000, 0);
 
+  const palette = getMountainPalette();
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x0f172a, 16, 78);
+  scene.fog = new THREE.Fog(palette.fog, 16, 78);
 
   const camera = new THREE.PerspectiveCamera(54, window.innerWidth / window.innerHeight, 0.1, 400);
-  camera.position.set(0, 14, 34);
+  camera.position.set(0, 19, 25);
   camera.lookAt(0, -1, -10);
 
-  const ambient = new THREE.AmbientLight(0xffffff, 0.45);
+  const ambient = new THREE.AmbientLight(palette.ambient, palette.ambientIntensity);
   scene.add(ambient);
 
-  const keyLight = new THREE.DirectionalLight(0xcce7ff, 1.2);
+  const keyLight = new THREE.DirectionalLight(palette.key, palette.keyIntensity);
   keyLight.position.set(25, 24, 15);
   scene.add(keyLight);
 
-  const fillLight = new THREE.DirectionalLight(0x7dd3fc, 0.55);
+  const fillLight = new THREE.DirectionalLight(palette.fill, palette.fillIntensity);
   fillLight.position.set(-30, 10, -18);
   scene.add(fillLight);
 
   const mountainGroup = new THREE.Group();
-  const { terrain, wire, terrainGeometry, wireGeometry, terrainMaterial, wireMaterial } = createMountains();
+  const { terrain, wire, terrainGeometry, wireGeometry, terrainMaterial, wireMaterial } = createMountains(palette);
   mountainGroup.add(terrain);
   mountainGroup.add(wire);
   scene.add(mountainGroup);
@@ -103,6 +152,12 @@ function initMountains() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(window.innerWidth, window.innerHeight, false);
   };
+
+  const themeObserver = new MutationObserver(() => {
+    applyMountainPalette({ scene, terrainMaterial, wireMaterial, ambient, keyLight, fillLight });
+  });
+
+  themeObserver.observe(document.body, { attributes: true, attributeFilter: ["class"] });
 
   window.addEventListener("pointermove", onPointerMove, { passive: true });
   window.addEventListener("resize", onResize);
@@ -131,6 +186,7 @@ function initMountains() {
     cancelAnimationFrame(frame);
     window.removeEventListener("pointermove", onPointerMove);
     window.removeEventListener("resize", onResize);
+    themeObserver.disconnect();
 
     terrainGeometry.dispose();
     wireGeometry.dispose();
