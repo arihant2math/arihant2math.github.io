@@ -171,7 +171,7 @@ function resizeCanvas(state) {
     state.ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
     state.maxAgents = Math.min(
         500,
-        Math.max(150, Math.floor((state.width * state.height) / 6200)),
+        Math.max(150, Math.floor((state.width * state.height) / 5000)),
     );
 
     while (
@@ -465,7 +465,7 @@ function drawPointer(state, palette, time) {
 
 function drawHud(state, palette) {
     const {ctx, width, height} = state;
-    const text = `${state.agents.length} fish  ·  LMB spawn (mouse attracts)  ·  RMB remove (mouse repels)`;
+    const text = `${state.agents.length}/${state.maxAgents} fish  ·  LMB spawn (mouse attracts)  ·  RMB remove (mouse repels)`;
 
     ctx.save();
     ctx.font = "600 11px 'IBM Plex Mono', monospace";
