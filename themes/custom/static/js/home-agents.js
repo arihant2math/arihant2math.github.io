@@ -399,7 +399,7 @@ function drawPointer(state, palette, time) {
 
 function drawHud(state, palette) {
   const { ctx, width, height } = state;
-  const text = `${state.agents.length} agents  ·  LMB spawn  ·  RMB cull  ·  mouse attracts`;
+  const text = `${state.agents.length} fish  ·  LMB spawn  ·  RMB remove  ·  mouse attracts`;
 
   ctx.save();
   ctx.font = "600 11px 'IBM Plex Mono', monospace";
