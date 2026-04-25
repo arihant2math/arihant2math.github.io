@@ -1,4 +1,6 @@
-Hello, my name is Ashwin Naren. As of 2025 I'm a junior in high school. I enjoy doing research on Machine Learning reliability and theoretical computer science. In my free time I swim and play classical guitar.
+<h1 class="font-logo home-name">Ashwin Naren</h1>
+
+Hello, my name is Ashwin Naren. I enjoy doing research on Machine Learning reliability and theoretical computer science. Currently, I work on evolutionary learning and computational complexity. In my free time I swim and play classical guitar.
 
 ## Links
 

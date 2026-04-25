@@ -10,6 +10,7 @@ module.exports = {
         'turbo': './scripts/turbo.js',
         'theme': './scripts/themeToggle.js',
         // 'copyCode': './scripts/copyCode.js',
+        'home-agents': './scripts/home-agents.js',
         // Pages
     },
     output: {

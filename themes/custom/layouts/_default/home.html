@@ -66,6 +66,12 @@
   {{- end }} -->
 </article>
 
-<script type="module" src="{{ "js/home-agents.js" | relURL }}"></script>
+{{- $home_agent_js := resources.Get "js/home-agents.js" }}
+{{- if not site.Params.assets.disableFingerprinting }}
+{{ $home_agent_js = $home_agent_js | resources.Fingerprint "sha512" }}
+<script type="module" crossorigin="anonymous" src="{{ $home_agent_js.RelPermalink }}" integrity="{{ $home_agent_js.Data.Integrity }}"></script>
+{{- else }}
+<script type="module" crossorigin="anonymous" src="{{ $home_agent_js.RelPermalink }}"></script>
+{{- end }}
 
 {{- end }}{{/* end main */}}
