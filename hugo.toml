@@ -2,7 +2,6 @@ baseURL = 'https://arihant2math.github.io'
 languageCode = 'en-us'
 title = "Ashwin's Website"
 enableRobotsTXT = true
-theme = 'custom'
 
 [menus]
 [[menus.main]]
