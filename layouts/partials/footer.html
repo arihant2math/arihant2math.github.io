@@ -15,15 +15,15 @@
     {{- end }}
 
     <span>
-        Contact [my github username]@gmail.com for any inquires.
+        Contact <a href="mailto:arihant2math@gmail.com">arihant2math@gmail.com</a> for website-related inquiries.
     </span>
     {{- template "partials/social_text.html" . }}
 </footer>
 {{- end }}
 
-{{/*{{- if (not site.Params.disableScrollToTop) }} */}}
-{{/*{{- partial "toplink.html" . }} */}}
-{{/*{{- end }} */}}
+{{- if (not site.Params.disableScrollToTop) }}
+{{- partial "toplink.html" . }}
+{{- end }}
 
 {{- partial "extend_footer.html" . }}
 
@@ -42,5 +42,15 @@
         <script defer crossorigin="anonymous" src="{{ $theme_toggle_js.RelPermalink }}" integrity="{{ $theme_toggle_js.Data.Integrity }}"></script>
     {{- else }}
         <script defer crossorigin="anonymous" src="{{ $theme_toggle_js.RelPermalink }}"></script>
+    {{- end }}
+{{- end }}
+
+{{- if (and (eq .Kind "page") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+    {{- $copy_code_js := resources.Get "js/copyCode.js" }}
+    {{- if not site.Params.assets.disableFingerprinting }}
+    {{ $copy_code_js = $copy_code_js | resources.Fingerprint "sha512" }}
+    <script defer crossorigin="anonymous" src="{{ $copy_code_js.RelPermalink }}" integrity="{{ $copy_code_js.Data.Integrity }}"></script>
+    {{- else }}
+    <script defer crossorigin="anonymous" src="{{ $copy_code_js.RelPermalink }}"></script>
     {{- end }}
 {{- end }}

@@ -1,6 +1,7 @@
-baseURL = 'https://arihant2math.github.io'
+baseURL = 'localhost:1313'
 languageCode = 'en-us'
 title = "Ashwin's Website"
+description = "Ashwin Naren's personal website."
 enableRobotsTXT = true
 
 [menus]
@@ -39,6 +40,18 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
 defaultTheme = "auto"
+author = "Ashwin Naren"
+description = "Ashwin Naren's personal website covering machine learning reliability, theoretical computer science, projects, writing, and publications."
+ShowCodeCopyButtons = true
+keywords = ["Ashwin Naren", "machine learning", "theoretical computer science", "research", "publications"]
+
+[params.assets]
+theme_color = "#2563eb"
+msapplication_TileColor = "#2563eb"
+favicon = "favicon.ico"
+favicon16x16 = "favicon-16x16.png"
+favicon32x32 = "favicon-32x32.png"
+apple_touch_icon = "apple-touch-icon.png"
 
 [[params.socialIcons]]
 name = "github"

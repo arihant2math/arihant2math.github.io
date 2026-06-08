@@ -8,6 +8,7 @@
 @import "legacy";
 
 @import "components/darkbutton";
+@import "components/footer";
 
 html {
     -webkit-tap-highlight-color: transparent;
@@ -18,6 +19,16 @@ html {
 
 html[data-turbo-visit-direction="forward"]::view-transition-old(sidebar):only-child {
     animation: slide-to-right 0.5s ease-out;
+}
+
+.top-link {
+    visibility: hidden;
+    transition: visibility 0.25s, opacity 0.4s linear;
+}
+
+.top-link:focus,
+#theme-toggle:focus {
+    outline: 0;
 }
 
 @media (prefers-reduced-motion) {

@@ -1,4 +1,8 @@
-{{ partialCached "head/meta.html" . }}
+{{- partialCached "head/meta.html" . .Page -}}
 <title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
+{{ partialCached "head/rss.html" . .Page }}
+{{ partialCached "head/noscript.html" . .Page }}
+<meta name="view-transition" content="same-origin" />
+{{ partial "extend_head.html" . }}
