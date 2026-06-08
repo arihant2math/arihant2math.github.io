@@ -3,10 +3,14 @@ title = 'Adventures with an Orin Nano'
 date = '2024-05-25'
 author = 'Ashwin Naren'
 tags = ['software', 'rust', 'ros2']
-summary = 'Our software team used an NVIDIA Orin Nano Developer Kit as a coprocessor with ROS 2 with an Intel RealSense Camera, and got it working.'
+summary = 'X-Post from a defunct website.'
 ShowReadingTime = true
 blog = true
 +++
+
+> Originally published in the now-defunct FRC Team #4014 (Pixelators) website.
+>
+> Since that website is now down, I've moved the post here.
 
 This season, our software team used
 an [NVIDIA Orin Nano Developer Kit](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/) as a

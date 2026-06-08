@@ -80,7 +80,7 @@
     .post-content p,
     .post-content figure,
     .post-content ul {
-        @apply mb-5;
+        @apply my-2;
     }
 
     .post-content ol,
@@ -90,10 +90,6 @@
 
     .post-content li {
         @apply mt-1
-    }
-
-    .post-content li p {
-        @apply mb-0
     }
 
     .post-content dl {
@@ -114,7 +110,7 @@
     }
 
     .post-content table {
-        @apply mb-5
+        @apply my-2
     }
 
     .post-content table th,
@@ -181,11 +177,6 @@
         // TODO: not code-bg
         @apply grid m-auto pt-2 pb-2 pl-5 pr-5 text-gray-100 bg-gray-900 rounded-lg overflow-x-auto break-all
     }
-
-    .post-content blockquote {
-        @apply mt-5 mb-5 ml-0 mr-0 pt-0 pb-0 pl-3 pr-3 border-2 border-solid border-gray-800 dark:border-gray-200
-    }
-
     .post-content hr {
         @apply mt-7 mb-7 h-0.5 bg-gray-300 dark:bg-gray-600 border-0
     }
@@ -211,6 +202,10 @@
 
     .post-content figure > figcaption > p {
         @apply text-gray-500 dark:text-gray-400 text-sm font-normal
+    }
+
+    .post-content blockquote {
+        @apply rounded-md border-0 border-solid border-l-4 border-accent-primary-light dark:border-accent-primary-dark bg-background-1-light dark:bg-background-1-dark px-5 py-1
     }
 
     .toc {
