@@ -47,12 +47,14 @@
 
   {{- $term := .Data.Term }}
   {{- range $index, $page := $paginator.Pages }}
-  <a class="block p-6 border rounded-lg shadow bg-background-1-light dark:bg-background-1-dark hover:bg-background-2-light dark:hover:bg-background-2-dark border-border-01-light dark:border-border-01-dark duration-300" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
+  {{- $externalUrl := .Param "externalUrl" }}
+  <a class="block p-6 border rounded-lg shadow bg-background-1-light dark:bg-background-1-dark hover:bg-background-2-light dark:hover:bg-background-2-dark border-border-01-light dark:border-border-01-dark duration-300" aria-label="post link to {{ .Title | plainify }}" href="{{ $externalUrl | default .Permalink }}" {{- if $externalUrl }} target="_blank" rel="noopener noreferrer"{{- end }}>
     {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
     {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
     <header class="">
       <h2 class="mb-2 text-2xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
         {{- .Title }}
+        {{- if $externalUrl }} (external){{- end }}
         {{- if .Draft }}
         <span class="entry-hint" title="Draft">
         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
