@@ -5,7 +5,6 @@ module.exports = {
         // Scripts
         'main': './scripts/main.js',
         'fastsearch': './scripts/fastsearch.js',
-        'intersect': './scripts/intersect.js',
         // 'sentry': './scripts/sentry.js',
         'turbo': './scripts/turbo.js',
         'theme': './scripts/themeToggle.js',

@@ -6,10 +6,3 @@
 <script defer crossorigin="anonymous" src="{{ $turbo_js.RelPermalink }}"></script>
 {{- end }}
 
-{{- $intersect_js := resources.Get "js/intersect.js" }}
-{{- if not site.Params.assets.disableFingerprinting }}
-{{ $intersect_js = $intersect_js | resources.Fingerprint "sha512" }}
-<script defer crossorigin="anonymous" src="{{ $intersect_js.RelPermalink }}" integrity="{{ $intersect_js.Data.Integrity }}"></script>
-{{- else }}
-<script defer crossorigin="anonymous" src="{{ $intersect_js.RelPermalink }}"></script>
-{{- end }}
