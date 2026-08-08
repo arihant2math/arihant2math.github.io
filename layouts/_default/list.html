@@ -48,11 +48,16 @@
   {{- $term := .Data.Term }}
   {{- range $index, $page := $paginator.Pages }}
   {{- $externalUrl := .Param "externalUrl" }}
-  <a class="block p-6 border rounded-lg shadow bg-background-1-light dark:bg-background-1-dark hover:bg-background-2-light dark:hover:bg-background-2-dark border-border-01-light dark:border-border-01-dark duration-300" aria-label="post link to {{ .Title | plainify }}" href="{{ $externalUrl | default .Permalink }}" {{- if $externalUrl }} target="_blank" rel="noopener noreferrer"{{- end }}>
+  <a class="group block p-6 border rounded-xl bg-background-1-light dark:bg-background-1-dark border-border-01-light dark:border-border-01-dark hover:border-accent-primary-light/40 dark:hover:border-accent-primary-dark/40 hover:shadow-lg hover:shadow-blue-600/5 dark:hover:shadow-blue-400/5 hover:-translate-y-0.5 transition-all duration-200" aria-label="post link to {{ .Title | plainify }}" href="{{ $externalUrl | default .Permalink }}" {{- if $externalUrl }} target="_blank" rel="noopener noreferrer"{{- end }}>
     {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
     {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="text-sm font-normal text-text-tertiary-light dark:text-text-tertiary-dark pb-2">
+      {{- partial "post/post_meta.html" . -}}
+    </div>
+    {{- end }}
     <header class="">
-      <h2 class="mb-2 text-2xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
+      <h2 class="mb-2 text-xl font-semibold tracking-tight text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-primary-light dark:group-hover:text-accent-primary-dark transition-colors duration-200">
         {{- .Title }}
         {{- if $externalUrl }} (external){{- end }}
         {{- if .Draft }}
@@ -66,12 +71,7 @@
       </h2>
     </header>
     {{- if (ne (.Param "hideSummary") true) }}
-    <p class="font-normal text-text-secondary-light dark:text-text-secondary-dark">{{ .Summary | plainify | htmlUnescape | truncate 140 }}</p>
-    {{- end }}
-    {{- if not (.Param "hideMeta") }}
-    <footer class="text-sm font-normal text-text-tertiary-light dark:text-text-tertiary-dark pt-2">
-      {{- partial "post/post_meta.html" . -}}
-    </footer>
+    <p class="font-normal text-base text-text-secondary-light dark:text-text-secondary-dark">{{ .Summary | plainify | htmlUnescape | truncate 140 }}</p>
     {{- end }}
   </a>
   {{- end }}

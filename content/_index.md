@@ -1,3 +1,7 @@
+---
+hideMeta: true
+---
+
 <h1 class="font-logo home-name">Ashwin Naren</h1>
 
 Hello, my name is Ashwin Naren. I enjoy doing research on Machine Learning reliability and theoretical computer science. Currently, I work on evolutionary learning and computational complexity. In my free time I swim and play classical guitar.

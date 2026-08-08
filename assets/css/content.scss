@@ -17,7 +17,7 @@
     }
 
     .post-title {
-        @apply mb-0.5 text-5xl
+        @apply mb-0.5 text-4xl md:text-5xl font-bold tracking-tight
     }
 
     .post-description {
@@ -44,27 +44,31 @@
     }
 
     .post-content h1 {
-        @apply text-4xl
+        @apply text-3xl md:text-4xl font-bold tracking-tight
     }
 
     .post-content h2 {
-        @apply text-2xl
+        @apply text-2xl font-semibold tracking-tight
     }
 
     .post-content h3 {
-        @apply text-xl
+        @apply text-xl font-semibold tracking-tight
     }
 
     .post-content h4 {
-        @apply text-lg
+        @apply text-lg font-semibold
     }
 
     .post-content h5 {
-        @apply text-base
+        @apply text-base font-semibold
     }
 
     .post-content h6 {
-        @apply text-sm
+        @apply text-sm font-semibold
+    }
+
+    .post-content a:not(:has(img, svg)) {
+        @apply underline decoration-accent-secondary-light/30 dark:decoration-accent-secondary-dark/40 underline-offset-4 hover:decoration-accent-primary-light dark:hover:decoration-accent-primary-dark transition-colors duration-150
     }
 
     .post-content a code {
@@ -81,6 +85,11 @@
     .post-content figure,
     .post-content ul {
         @apply my-2;
+    }
+
+    .post-content p,
+    .post-content li {
+        @apply leading-relaxed;
     }
 
     .post-content ol,
@@ -209,8 +218,7 @@
     }
 
     .toc {
-        // TODO: not code-bg
-        @apply mt-0 mr-0.5 mb-10 ml-0.5 border-2 border-solid border-gray-800 dark:border-gray-200 rounded-lg bg-gray-900 p-2
+        @apply mt-0 mr-0.5 mb-10 ml-0.5 border border-solid border-border-01-light dark:border-border-01-dark rounded-xl bg-background-2-light dark:bg-background-1-dark p-2
     }
 
     .toc details summary {
@@ -245,21 +253,21 @@
         @apply mb-2.5
     }
 
-    .post-tags a,
     .share-buttons,
     .paginav {
-        // TODO: not code-bg
-        @apply rounded-lg bg-gray-900 border border-solid border-gray-800 dark:border-gray-200
+        @apply rounded-lg bg-background-1-light dark:bg-background-1-dark border border-solid border-border-01-light dark:border-border-01-dark
     }
 
     .post-tags a {
-        // TODO: not code-bg
-        @apply block pt-0 pb-0 pl-3.5 pr-3.5 text-gray-500 dark:text-gray-400 text-sm bg-gray-900
+        @apply block rounded-full border border-solid border-border-01-light dark:border-border-01-dark bg-background-2-light dark:bg-background-1-dark pt-1 pb-1 pl-3.5 pr-3.5 text-text-secondary-light dark:text-text-secondary-dark text-sm transition-colors duration-150
     }
 
-    .post-tags a:hover,
+    .post-tags a:hover {
+        @apply border-accent-primary-light/40 dark:border-accent-primary-dark/40 text-accent-primary-light dark:text-accent-primary-dark
+    }
+
     .paginav a:hover {
-        @apply bg-gray-800 dark:bg-gray-200
+        @apply bg-background-2-light dark:bg-background-2-dark
     }
 
     .share-buttons {
@@ -307,5 +315,10 @@
 
     .paginav .next {
         @apply ms-auto text-right rtl:text-left
+    }
+
+    // Author lines directly under publication titles
+    .post-content h2 + p > em {
+        @apply text-base text-text-secondary-light dark:text-text-secondary-dark
     }
 }

@@ -40,19 +40,19 @@ module.exports = {
                 },
                 'background-0': {
                     light: colors.white,
-                    dark: colors.slate["900"],
+                    dark: colors.slate["950"],
                 },
                 'background-1': {
                     light: colors.white,
-                    dark: colors.slate["800"],
+                    dark: colors.slate["900"],
                 },
                 'background-2': {
                     light: colors.gray["100"],
-                    dark: colors.slate["700"],
+                    dark: colors.slate["800"],
                 },
                 'border-01': {
                     light: colors.slate["200"],
-                    dark: colors.gray["700"],
+                    dark: colors.slate["800"],
                 }
             },
         }

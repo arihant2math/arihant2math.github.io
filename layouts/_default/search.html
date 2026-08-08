@@ -36,10 +36,10 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
         </svg>
     </div>
-    <input type="search" id="searchInput" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"/>
-    <button type="button" id="searchButton" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+    <input type="search" id="searchInput" class="block w-full p-4 ps-10 text-sm text-text-primary-light border border-border-01-light rounded-xl bg-background-1-light focus:ring-accent-primary-light focus:border-accent-primary-light dark:bg-background-1-dark dark:border-border-01-dark dark:placeholder-slate-400 dark:text-text-primary-dark dark:focus:ring-accent-primary-dark dark:focus:border-accent-primary-dark shadow-sm" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"/>
+    <button type="button" id="searchButton" class="text-white absolute end-2.5 bottom-2.5 bg-accent-primary-light hover:bg-accent-secondary-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-accent-primary-dark dark:hover:bg-accent-secondary-dark dark:focus:ring-blue-800 transition-colors">Search</button>
 </div>
 
-<div hidden class="w-full mt-4 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-slate-800 dark:border-gray-600 dark:text-white shadow-md" id="searchResults" aria-label="search results"></div>
+<div hidden class="w-full mt-4 text-text-primary-light bg-background-1-light border border-border-01-light rounded-xl dark:bg-background-1-dark dark:border-border-01-dark dark:text-text-primary-dark shadow-md" id="searchResults" aria-label="search results"></div>
 
 {{- end }}{{/* end main */}}

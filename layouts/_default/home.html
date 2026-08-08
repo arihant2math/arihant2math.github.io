@@ -7,6 +7,7 @@
 <article class="post-single home-trinket-content">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
+    {{- if .Title }}
     <h1 class="post-title entry-hint-parent">
       {{ .Title }}
       {{- if .Draft }}
@@ -18,6 +19,7 @@
       </span>
       {{- end }}
     </h1>
+    {{- end }}
     {{- if .Description }}
     <div class="post-description">
       {{ .Description }}
