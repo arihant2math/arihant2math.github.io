@@ -34,29 +34,30 @@ import Nav from "../layouts/Nav.astro";
         }
 
         .box {
-            position: fixed;
             box-sizing: border-box;
             background: rgba(255, 255, 255, .92);
             border: 1px solid #444;
             padding: .4em 1em;
         }
 
-        #name {
+        header {
+            position: fixed;
             top: 1.5rem;
             left: 1.5rem;
-            z-index: 2;
+            z-index: 1;
+            display: flex;
+            gap: .75rem;
+        }
+
+        #name {
             font: inherit;
             font-weight: 600;
             color: inherit;
             cursor: pointer;
         }
 
-        #links {
-            top: 1.5rem;
-            right: 1.5rem;
-        }
-
         #card {
+            position: fixed;
             top: 4.5rem;
             left: 1.5rem;
             max-width: min(36rem, calc(100vw - 3rem));
@@ -108,8 +109,10 @@ import Nav from "../layouts/Nav.astro";
 <body>
 <canvas aria-hidden="true"></canvas>
 <div id="grain"></div>
-<button id="name" class="box" aria-expanded="true" aria-controls="card">Ashwin Naren</button>
-<Nav id="links" class="box"/>
+<header>
+    <button id="name" class="box" aria-expanded="true" aria-controls="card">Ashwin Naren</button>
+    <Nav class="box"/>
+</header>
 <main id="card" class="box">
     <button id="close" aria-label="Close">&times;</button>
     <p>Hello, my name is Ashwin Naren.</p>
