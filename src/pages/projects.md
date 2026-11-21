@@ -38,6 +38,14 @@ This method seems to have gained some traction in the community; I see teams sta
 - [Blog Post](https://pixelators.org/blog/2024_05_25_orin_coprocessor/)
 - [Repo](https://github.com/Pixelators4014/pixelization_rs)
 
+## Other Projects
+
+I work on servo: I landed the initial indexeddb implementation and later ported indexeddb and later webstorage to sqlite3.
+
+I used to work on RustPython: I worked on the initial version of the ctypes module, among many other modules and also added match statement support to the interpreter.
+
+I have a spattering of contributions in other projects including clap.
+
 # Finished Projects
 
 Projects that have reached an end-state. Research in pre-print or publication can be found in the [publications page](/publications).
