@@ -5,11 +5,13 @@ title: "Projects"
 
 Most of my projects are on my GitHub profile: https://github.com/arihant2math.
 
-A few other organizations have projects that I created/maintain:
-- https://github.com/libffi-rs/
-- https://github.com/Pixelators4014/
-- https://github.com/The-Knights-of-Ni/
-- https://github.com/ApesofWrath
+# Ongoing projects
+
+## Project Pixel Orbital
+
+I am the team lead of Project Pixel Orbital; we plan to put a 3U CubeSat in orbit in 2027 for under $10k in build costs.
+
+I have written flight software, ground segment software, designed the structure, and done electronics work (schematics + PCB).
 
 # Open Source
 
