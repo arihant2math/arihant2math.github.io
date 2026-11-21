@@ -1,0 +1,13 @@
+---
+const nav = [
+    ...(Astro.url.pathname === "/" ? [] : [["Home", "/"]]),
+    ["Projects", "/projects/"],
+    ["Blog", "/blog/"],
+    ["Publications", "/publications/"],
+];
+---
+
+<nav {...Astro.props}>
+    {nav.map(([name, href], i) =>
+            <>{i > 0 && " / "}<a href={href}>{name}</a></>)}
+</nav>
