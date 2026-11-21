@@ -1,12 +1,9 @@
-.hugo_build.lock
 **/.DS_Store
 
 .idea/*
 .vscode/*
 .vs/*
 
-**/node_modules
-
-resources/_gen
-
-public/*
+node_modules/
+dist/
+.astro/

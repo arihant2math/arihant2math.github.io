@@ -1,0 +1,21 @@
+---
+import Base from "../../layouts/Base.astro";
+import { formatDate, getPosts, postUrl } from "../../lib/blog";
+
+const posts = await getPosts();
+---
+
+<Base title="Blog">
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={postUrl(post)}>{post.data.title}</a>
+          {post.data.externalUrl && " (external)"} &mdash; {formatDate(post.data.date)}
+          <br />
+          {post.data.summary}
+        </li>
+      ))
+    }
+  </ul>
+</Base>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://arihant2math.github.io/sitemap-index.xml

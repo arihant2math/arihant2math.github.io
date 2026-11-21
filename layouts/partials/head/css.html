@@ -1,8 +1,0 @@
-{{ with resources.Get "css/styles.scss"
-| toCSS
-| postCSS (dict "config" "./assets/css/postcss.config.js")
-| minify
-| fingerprint
-}}
-<link rel="stylesheet" href="{{ .RelPermalink }}">
-{{ end }}
